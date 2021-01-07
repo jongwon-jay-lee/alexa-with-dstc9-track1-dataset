@@ -140,9 +140,9 @@ def train(args, train_dataset, eval_dataset, model: PreTrainedModel, tokenizer: 
 
             if args.fp16:
                 with amp.scale_loss(loss, optimizer) as scaled_loss:
-                    scaled_loss.backward()
+                    scaled_loss.backward()      # accumulate the gradients
             else:
-                loss.backward()
+                loss.backward()     # accumulate the gradients
 
             tr_loss += loss.item()
 
@@ -151,9 +151,9 @@ def train(args, train_dataset, eval_dataset, model: PreTrainedModel, tokenizer: 
                     torch.nn.utils.clip_grad_norm_(amp.master_params(optimizer), args.max_grad_norm)
                 else:
                     torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
-                optimizer.step()
+                optimizer.step()        # perform a parameter update based on the current gradient
                 scheduler.step()
-                optimizer.zero_grad()
+                optimizer.zero_grad()   # reset the gradient
                 global_step += 1
                 local_steps += 1
                 epoch_iterator.set_postfix(Loss=tr_loss/local_steps)
