@@ -59,9 +59,9 @@ class BaseDataset(torch.utils.data.Dataset):
         for i, (log, label) in enumerate(tqdm(self.dataset_walker, disable=self.args.local_rank not in [-1, 0])): # only show progress bar in one process
             dialog = {}
             dialog["id"] = i
-            dialog["log"] = log
+            dialog["log"] = log     # log.speaker: U/S, log.text: utterance/response
             if label is not None:
-                if "response" in label:
+                if "response" in label:     # label: {target: False} or {target: True, knowledge: ... , response: ... }
                     label["response_tokenized"] = self.tokenizer.convert_tokens_to_ids(
                         self.tokenizer.tokenize(label["response"])
                     )

@@ -162,8 +162,8 @@ def train(args, train_dataset, eval_dataset, model: PreTrainedModel, tokenizer: 
         if args.local_rank in [-1, 0]:
             for key, value in results.items():
                 tb_writer.add_scalar("eval_{}".format(key), value, global_step)
-            tb_writer.add_scalar("lr", scheduler.get_lr()[0], global_step)
-            tb_writer.add_scalar("loss", tr_loss / local_steps, global_step)
+            tb_writer.add_scalar("lr", scheduler.get_lr()[0], global_step=global_step)
+            tb_writer.add_scalar("loss", tr_loss / local_steps, global_step=global_step)
 
             checkpoint_prefix = "checkpoint"
             # Save model checkpoint
@@ -319,13 +319,13 @@ def main():
     # load args from params file and update the args Namespace
     with open(args.params_file, "r") as f:
         params = json.load(f)
-        args = vars(args)
+        args = vars(args)       # Namespace -> dict
 
         update_additional_params(params, args)
-        args.update(params)
-        args = Namespace(**args)
+        args.update(params)         # merge params to args
+        args = Namespace(**args)    # dict -> Namespace
     
-    args.params = params # used for saving checkpoints
+    args.params = params        # used for saving checkpoints (duplicated values added, but we will see)
     set_default_params(args)
     dataset_args = Namespace(**args.dataset_args)
     set_default_dataset_params(dataset_args)
