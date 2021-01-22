@@ -140,9 +140,9 @@ def train(args, train_dataset, eval_dataset, model: PreTrainedModel, tokenizer: 
 
             if args.fp16:
                 with amp.scale_loss(loss, optimizer) as scaled_loss:
-                    scaled_loss.backward()      # accumulate the gradients
+                    scaled_loss.backward()      # accumulate the gradients of tensors in the model
             else:
-                loss.backward()     # accumulate the gradients
+                loss.backward()                 # accumulate the gradients of tensors in the model
 
             tr_loss += loss.item()
 
