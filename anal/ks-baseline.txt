@@ -1,10 +1,10 @@
-01/21/2021 05:38:39 - INFO - argument.py:15 : params_file is not set, using the params.json in checkpoint
-01/21/2021 05:38:39 - INFO - configuration_utils.py:280 : loading configuration file runs/ks-all-baseline/config.json
-01/21/2021 05:38:39 - INFO - configuration_utils.py:318 : Model config GPT2Config {
-  "_num_labels": 2,
+01/22/2021 05:13:27 - INFO - argument.py:15 : params_file is not set, using the params.json in checkpoint
+01/22/2021 05:13:27 - INFO - configuration_utils.py:280 : loading configuration file runs/ks-all-baseline/config.json
+01/22/2021 05:13:27 - INFO - configuration_utils.py:318 : Model config GPT2Config {
+  "_num_labels": 1,
   "activation_function": "gelu_new",
   "architectures": [
-    "GPT2LMHeadModel"
+    "GPT2DoubleHeadsModel"
   ],
   "attn_pdrop": 0.1,
   "bos_token_id": 50256,
@@ -15,15 +15,13 @@
   "eos_token_id": 50256,
   "finetuning_task": null,
   "id2label": {
-    "0": "LABEL_0",
-    "1": "LABEL_1"
+    "0": "LABEL_0"
   },
   "initializer_range": 0.02,
   "is_decoder": false,
   "is_encoder_decoder": false,
   "label2id": {
-    "LABEL_0": 0,
-    "LABEL_1": 1
+    "LABEL_0": 0
   },
   "layer_norm_epsilon": 1e-05,
   "length_penalty": 1.0,
@@ -65,13 +63,13 @@
   "vocab_size": 50264
 }
 
-01/21/2021 05:38:39 - INFO - modeling_utils.py:505 : loading weights file runs/ks-all-baseline/pytorch_model.bin
-01/21/2021 05:38:43 - INFO - configuration_utils.py:280 : loading configuration file runs/ks-all-baseline/config.json
-01/21/2021 05:38:43 - INFO - configuration_utils.py:318 : Model config GPT2Config {
-  "_num_labels": 2,
+01/22/2021 05:13:27 - INFO - modeling_utils.py:505 : loading weights file runs/ks-all-baseline/pytorch_model.bin
+01/22/2021 05:13:31 - INFO - configuration_utils.py:280 : loading configuration file runs/ks-all-baseline/config.json
+01/22/2021 05:13:31 - INFO - configuration_utils.py:318 : Model config GPT2Config {
+  "_num_labels": 1,
   "activation_function": "gelu_new",
   "architectures": [
-    "GPT2LMHeadModel"
+    "GPT2DoubleHeadsModel"
   ],
   "attn_pdrop": 0.1,
   "bos_token_id": 50256,
@@ -82,15 +80,13 @@
   "eos_token_id": 50256,
   "finetuning_task": null,
   "id2label": {
-    "0": "LABEL_0",
-    "1": "LABEL_1"
+    "0": "LABEL_0"
   },
   "initializer_range": 0.02,
   "is_decoder": false,
   "is_encoder_decoder": false,
   "label2id": {
-    "LABEL_0": 0,
-    "LABEL_1": 1
+    "LABEL_0": 0
   },
   "layer_norm_epsilon": 1e-05,
   "length_penalty": 1.0,
@@ -132,20 +128,15 @@
   "vocab_size": 50264
 }
 
-01/21/2021 05:38:43 - INFO - tokenization_utils.py:420 : Model name 'runs/ks-all-baseline/' not found in model shortcut name list (gpt2, gpt2-medium, gpt2-large, gpt2-xl, distilgpt2). Assuming 'runs/ks-all-baseline/' is a path, a model identifier, or url to a directory containing tokenizer files.
-01/21/2021 05:38:43 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/vocab.json
-01/21/2021 05:38:43 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/merges.txt
-01/21/2021 05:38:43 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/added_tokens.json
-01/21/2021 05:38:43 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/special_tokens_map.json
-01/21/2021 05:38:43 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/tokenizer_config.json
-01/21/2021 05:38:46 - INFO - main.py:373 : Training/evaluation parameters Namespace(adam_epsilon=1e-08, checkpoint='runs/ks-all-baseline/', dataroot='data', dataset_args={'history_max_utterances': 1000000, 'history_max_tokens': 128, 'knowledge_max_tokens': 128, 'dataroot': 'data', 'knowledge_file': 'knowledge.json', 'negative_sample_method': 'all', 'eval_all_snippets': True}, device=device(type='cuda', index=0), distributed=False, eval_all_snippets=True, eval_dataset='val', eval_desc='', eval_only=True, exp_name='', fp16='', gradient_accumulation_steps=4, history_max_tokens=-1, knowledge_file='knowledge.json', knowledge_max_tokens=-1, labels_file='pred/val/baseline.ktd.json', learning_rate=6.25e-05, local_rank=-1, max_grad_norm=1.0, model_name_or_path='./pretrained/gpt2/', n_gpu=4, negative_sample_method='', no_labels=False, num_train_epochs=10, output_dir='runs/ks-all-baseline/', output_file='pred/val/baseline.ks.json', params={'dataset_args': {'history_max_utterances': 1000000, 'history_max_tokens': 128, 'knowledge_max_tokens': 128, 'dataroot': 'data', 'knowledge_file': 'knowledge.json', 'negative_sample_method': 'all', 'eval_all_snippets': True}, 'task': 'generation', 'model_name_or_path': './pretrained/gpt2/', 'per_gpu_train_batch_size': 4, 'per_gpu_eval_batch_size': 4, 'gradient_accumulation_steps': 4, 'learning_rate': 6.25e-05, 'adam_epsilon': 1e-08, 'max_grad_norm': 1.0, 'num_train_epochs': 10, 'warmup_steps': 0, 'fp16': '', 'seed': 42}, params_file='runs/ks-all-baseline/params.json', per_gpu_eval_batch_size=4, per_gpu_train_batch_size=4, seed=42, task='generation', warmup_steps=0)
-01/21/2021 05:38:46 - INFO - dataset.py:57 : Tokenize and encode the dialog data
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9663/9663 [00:00<00:00, 618196.18it/s]
-01/21/2021 05:38:46 - INFO - dataset.py:88 : Creating examples
-100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9663/9663 [00:10<00:00, 924.27it/s]
-Evaluating:   0%|                                                                                                                                                                                           | 0/164 [00:00<?, ?it/s]/usr/local/lib/python3.6/dist-packages/torch/nn/parallel/_functions.py:61: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
-  warnings.warn('Was asked to gather along dimension 0, but all '
-Evaluating: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 164/164 [00:35<00:00,  4.63it/s]
-01/21/2021 05:39:32 - INFO - main.py:262 : ***** Eval results val *****
-01/21/2021 05:39:32 - INFO - main.py:265 :   loss = 32.78200639166483
-01/21/2021 05:39:32 - INFO - main.py:265 :   perplexity = tensor(1.7260e+14)
+01/22/2021 05:13:31 - INFO - tokenization_utils.py:420 : Model name 'runs/ks-all-baseline/' not found in model shortcut name list (gpt2, gpt2-medium, gpt2-large, gpt2-xl, distilgpt2). Assuming 'runs/ks-all-baseline/' is a path, a model identifier, or url to a directory containing tokenizer files.
+01/22/2021 05:13:31 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/vocab.json
+01/22/2021 05:13:31 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/merges.txt
+01/22/2021 05:13:31 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/added_tokens.json
+01/22/2021 05:13:31 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/special_tokens_map.json
+01/22/2021 05:13:31 - INFO - tokenization_utils.py:502 : loading file runs/ks-all-baseline/tokenizer_config.json
+01/22/2021 05:13:34 - INFO - main.py:376 : Training/evaluation parameters Namespace(adam_epsilon=1e-08, checkpoint='runs/ks-all-baseline/', dataroot='data', dataset_args={'n_candidates': 2, 'eval_all_snippets': True, 'negative_sample_method': 'all', 'history_max_utterances': 1000000, 'history_max_tokens': 100, 'knowledge_max_tokens': 100, 'dataroot': 'data', 'knowledge_file': 'knowledge.json'}, device=device(type='cuda', index=0), distributed=False, eval_all_snippets=True, eval_dataset='val', eval_desc='', eval_only=True, exp_name='', fp16='', gradient_accumulation_steps=8, history_max_tokens=-1, knowledge_file='knowledge.json', knowledge_max_tokens=-1, labels_file='pred/val/baseline.ktd.json', learning_rate=6.25e-05, local_rank=-1, max_candidates_per_forward_eval=16, max_grad_norm=1.0, model_name_or_path='./pretrained/gpt2/', n_gpu=4, negative_sample_method='', no_labels=False, num_train_epochs=10, output_dir='runs/ks-all-baseline/', output_file='pred/val/baseline.ks.json', params={'dataset_args': {'n_candidates': 2, 'eval_all_snippets': True, 'negative_sample_method': 'all', 'history_max_utterances': 1000000, 'history_max_tokens': 100, 'knowledge_max_tokens': 100, 'dataroot': 'data', 'knowledge_file': 'knowledge.json'}, 'task': 'selection', 'model_name_or_path': './pretrained/gpt2/', 'per_gpu_train_batch_size': 2, 'per_gpu_eval_batch_size': 1, 'gradient_accumulation_steps': 8, 'max_candidates_per_forward_eval': 16, 'learning_rate': 6.25e-05, 'adam_epsilon': 1e-08, 'max_grad_norm': 1.0, 'num_train_epochs': 10, 'warmup_steps': 0, 'fp16': '', 'seed': 42}, params_file='runs/ks-all-baseline/params.json', per_gpu_eval_batch_size=1, per_gpu_train_batch_size=2, seed=42, task='selection', warmup_steps=0)
+01/22/2021 05:13:34 - INFO - dataset.py:57 : Tokenize and encode the dialog data
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9663/9663 [00:00<00:00, 602992.82it/s]
+01/22/2021 05:13:35 - INFO - dataset.py:88 : Creating examples
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9663/9663 [00:10<00:00, 927.48it/s]
+Evaluating:  34%|██████████████████████████████████████████████████████████▎                                                                                                                | 891/2613 [5:13:15<10:05:40, 21.10s/it]
