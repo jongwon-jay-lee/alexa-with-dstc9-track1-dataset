@@ -1,0 +1,146 @@
+01/25/2021 07:11:33 - INFO - configuration_utils.py:280 : loading configuration file runs/rg-hml128-kml128-baseline/config.json
+01/25/2021 07:11:33 - INFO - configuration_utils.py:318 : Model config GPT2Config {
+  "_num_labels": 2,
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "decoder_start_token_id": null,
+  "do_sample": false,
+  "early_stopping": false,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "is_encoder_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_epsilon": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "min_length": 0,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "no_repeat_ngram_size": 0,
+  "num_beams": 1,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": false,
+  "pad_token_id": null,
+  "prefix": null,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "resid_pdrop": 0.1,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 50264
+}
+
+01/25/2021 07:11:33 - INFO - tokenization_utils.py:420 : Model name 'runs/rg-hml128-kml128-baseline/' not found in model shortcut name list (gpt2, gpt2-medium, gpt2-large, gpt2-xl, distilgpt2). Assuming 'runs/rg-hml128-kml128-baseline/' is a path, a model identifier, or url to a directory containing tokenizer files.
+01/25/2021 07:11:33 - INFO - tokenization_utils.py:502 : loading file runs/rg-hml128-kml128-baseline/vocab.json
+01/25/2021 07:11:33 - INFO - tokenization_utils.py:502 : loading file runs/rg-hml128-kml128-baseline/merges.txt
+01/25/2021 07:11:33 - INFO - tokenization_utils.py:502 : loading file runs/rg-hml128-kml128-baseline/added_tokens.json
+01/25/2021 07:11:33 - INFO - tokenization_utils.py:502 : loading file runs/rg-hml128-kml128-baseline/special_tokens_map.json
+01/25/2021 07:11:33 - INFO - tokenization_utils.py:502 : loading file runs/rg-hml128-kml128-baseline/tokenizer_config.json
+01/25/2021 07:11:34 - INFO - configuration_utils.py:280 : loading configuration file runs/rg-hml128-kml128-baseline/config.json
+01/25/2021 07:11:34 - INFO - configuration_utils.py:318 : Model config GPT2Config {
+  "_num_labels": 2,
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "decoder_start_token_id": null,
+  "do_sample": false,
+  "early_stopping": false,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "is_encoder_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_epsilon": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "min_length": 0,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "no_repeat_ngram_size": 0,
+  "num_beams": 1,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": false,
+  "pad_token_id": null,
+  "prefix": null,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "resid_pdrop": 0.1,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 50264
+}
+
+01/25/2021 07:11:34 - INFO - modeling_utils.py:505 : loading weights file runs/rg-hml128-kml128-baseline/pytorch_model.bin
+01/25/2021 07:11:40 - INFO - generate.py:199 : Generation parameters Namespace(adam_epsilon=1e-08, checkpoint='runs/rg-hml128-kml128-baseline/', dataroot='data', dataset_args={'history_max_utterances': 1000000, 'history_max_tokens': 128, 'knowledge_max_tokens': 128, 'dataroot': 'data', 'knowledge_file': 'knowledge.json'}, device=device(type='cuda', index=0), distributed=False, eval_dataset='val', eval_desc='', fp16='', generate=True, generation_params_file='baseline/configs/generation/generation_params.json', gradient_accumulation_steps=4, labels_file='pred/val/baseline.ks.json', learning_rate=6.25e-05, local_rank=-1, max_grad_norm=1.0, max_length=40, min_length=1, model_name_or_path='./pretrained/gpt2/', n_gpu=4, no_sample=False, num_train_epochs=10, output_dir='runs/rg-hml128-kml128-baseline/', output_file='baseline_val.json', params={'dataset_args': {'history_max_utterances': 1000000, 'history_max_tokens': 128, 'knowledge_max_tokens': 128, 'dataroot': 'data', 'knowledge_file': 'knowledge.json'}, 'task': 'generation', 'model_name_or_path': './pretrained/gpt2/', 'per_gpu_train_batch_size': 4, 'per_gpu_eval_batch_size': 4, 'gradient_accumulation_steps': 4, 'learning_rate': 6.25e-05, 'adam_epsilon': 1e-08, 'max_grad_norm': 1.0, 'num_train_epochs': 10, 'warmup_steps': 0, 'fp16': '', 'seed': 42}, params_file='runs/rg-hml128-kml128-baseline/params.json', per_gpu_eval_batch_size=4, per_gpu_train_batch_size=4, seed=42, task='generation', temperature=0.7, top_k=0, top_p=0.9, warmup_steps=0)
+01/25/2021 07:11:40 - INFO - dataset.py:57 : Tokenize and encode the dialog data
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9663/9663 [00:00<00:00, 589015.38it/s]
+01/25/2021 07:11:41 - INFO - dataset.py:88 : Creating examples
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9663/9663 [00:10<00:00, 923.44it/s]
+Evaluating: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2613/2613 [18:36<00:00,  2.34it/s]
+01/25/2021 07:30:27 - INFO - data.py:129 : Writing predictions to baseline_val.json
