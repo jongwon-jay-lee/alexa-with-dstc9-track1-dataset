@@ -134,5 +134,8 @@ shell_scripts/**
 # dataset_cache
 dataset_cache/**
 
-
+# pretrained models
 pretrained/**
+
+# test runs
+_runs/**
